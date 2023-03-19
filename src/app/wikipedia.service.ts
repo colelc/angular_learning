@@ -35,6 +35,7 @@ export class WikipediaService {
         format: "json",
         list: "search",
         utf8: "1",
+        srlimit: "100",
         srsearch: term
       }
     });
