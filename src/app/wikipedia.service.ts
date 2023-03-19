@@ -37,12 +37,15 @@ export class WikipediaService {
         utf8: "1",
         srsearch: term
       }
-    }).pipe(
+    });
+    /*
+    .pipe(
      map(value => value.query.search),
      map(value => {
       console.log(value);
       return value;
      })
     );
+    */
   }
 }

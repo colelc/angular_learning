@@ -1,0 +1,16 @@
+.site-header {
+    background-color: beige;
+    margin-top: 5px;
+    /*
+    justify-content: space-between;
+    align-items: center;
+    display: flex;*/
+}
+
+.site-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 10px 10px 10px;
+  }

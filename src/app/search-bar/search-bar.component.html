@@ -1,6 +1,7 @@
 <p></p>
 <div class="container">
     <form (submit)="onFormSubmit($event)">
-        <input (input)="onInput($event)"/>
+        <label for="id-search">Enter Wikipedia Search Term&nbsp;&nbsp;</label>
+        <input id="id-search" (input)="onInput($event)"/>
     </form>
 </div>

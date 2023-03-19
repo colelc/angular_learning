@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
-import { IWikiResponse } from 'src/interface/IWikiResponse';
+import { Component, OnInit } from '@angular/core';
 import { WikipediaService } from './wikipedia.service';
-//import { IWikiResponse } from 'src/interface/IWikiResponse';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   pages:[];
-  constructor(private wikipediaService: WikipediaService) {
+  
+  constructor(private wikipediaService: WikipediaService, private dataService: DataService) {
     this.pages = [];
   }
-
-  onTerm(term: string) {
-    console.log("here is the emitted term: " + term);
-    // we are subscribing as an observer
-    this.wikipediaService.search(term).subscribe((response:any) => { // callback function
-      this.pages = response;
+  ngOnInit(): void {
+    this.dataService.getPages().subscribe((pages: any) => {
+      this.pages = pages;
     });
   }
+
 }
